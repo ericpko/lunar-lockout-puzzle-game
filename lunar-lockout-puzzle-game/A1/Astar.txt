@@ -1,0 +1,24 @@
+Suppose you want to use A* and you have a heuristic that may overestimate or
+underestimate cost to the goal by as much as 20%. Can you do anything to
+guarantee the algorithm will find the optimal solution (if one exists)?
+
+1) If a heuristic overestimates the cost to the goal, then it is not admissable.
+If a heuristic is not admissable, sometimes it overestimates the cost to reach
+a goal, and might choose a path with a higher cost than the optimal path.
+
+Therefore, if a heuristic sometimes overestimate and sometimes underestimates,
+then whenever it overestimates, it has a chance of missing an optimal solution
+because it thinks the goal requires more moves than is actually necessary. To
+guarantee the algorithm will find the optimal solution, you could always
+multiply the heuristic function by (1 / 5) to reduce the amount that the
+heuristic overestimates.
+
+
+(True or False) Assume you you are playing Lunar Lockout on a board that has
+three xanadus. The sum of the Manhattan distances between each xanadu and the
+exit is an admissible heuristic for this problem, should you use A-star to
+solve it.
+
+2) True in this specific case. Since we can assume that the Manhattan distance
+is an admissable heuristic in this case, then using A* will lead to an optimal
+solution.
